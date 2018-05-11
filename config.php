@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Boost config.
+ * escribiendo config.
  *
  * @package   theme_escribiendo
  * @copyright 2016 Frédéric Massart
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/lib.php');
 
-$THEME->name = 'boost';
+$THEME->name = 'escribiendo';
 $THEME->sheets = [];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;

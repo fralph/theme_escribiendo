@@ -12,13 +12,13 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #1177d1 !default;
+$brand-primary:             #71A7BB !default;
 $brand-info:                #ad53b2 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
-$navbar-height:             50px !default;
+$navbar-height:             15px !default;
 
 // Spacing
 $spacer:   1rem !default;
@@ -31,8 +31,8 @@ $body-bg:    #f4f4f4 !default;
 $body-color: #262626 !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
-$font-size-root: 14px !default;
+$font-family-sans-serif: "Century Gothic", "Myriad Pro", "Myriad Pro Light" !default;
+$font-size-root: 15px !default;
 
 // Tables
 $table-bg:                      transparent !default;
@@ -46,9 +46,10 @@ $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            $body-color;
 
 // Navbar
-$navbar-light-color:                rgba(0, 0, 0, .535) !default;
+$navbar-light-color:                #DAE5EC !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
+
 
 // Cards
 $card-border-radius:       0 !default;
@@ -80,49 +81,88 @@ $breadcrumb-divider-rtl: "/" !default;
         padding-right: 1rem;
         margin-right: $spacer * 2;
         color: #fff;
-        background-color: $brand-primary;
-        @include hover-focus {
-            color: #fff;
+        
+            
         }
-        &.has-logo {
-            color: $brand-primary;
-            background-color: transparent;
-            @include hover-focus {
-                color: $brand-primary;
-            }
-            padding-top: 0;
-        }
-    }
+    
 
     .navbar-nav {
         .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-link {
-            font-size: $font-size-sm;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: "Berlin Sans FB", "Berlin Sans FB Demi", Arial, Helvetica;
+			font-size: 2.4em;
+			text-transform: capitalize;
+			color: #DAE5EC;
+        }
+        
+    }
+}
+.logo-escribiendo{
+	background-image: url([[pix:theme|logos]]);
+	background-repeat: no-repeat;
+	margin-left: 5px;
+	min-height: 140px;
+	min-width: 190px;
+}
+
+body{
+	padding-top: 140px;
+}
+.navbar{
+	max-height: none;
+	margin-bottom: 0px;
+	background-color: #00547C;
+}
+/** Page header */
+#page-header {
+    .logo {
+     
+        img {
+            min-height: 190px;
+            max-height: 190px;
         }
     }
 }
 
+header {
+    .logo img {
+        min-height: 190px;
+        max-height: 190px;
+    }
+
+}
+.text_nav {
+	font-family: "Berlin Sans FB", "Berlin Sans FB Demi", Arial, Helvetica;
+	font-size: 1.5em;
+	text-transform: capitalize;
+}
 /**
  * Styling the dropdown menus.
  */
 .dropdown-menu {
+	background-color: #00547c;
     font-size: 14px;
-    border-radius: 0;
+    border-radius: 6px;
+    color: #DAE5EC;
+	text-decoration: none;
     .dropdown-item {
+    	font-weight: bold;
+    	color: #DAE5EC;
         padding-top: 8px;
         padding-bottom: 8px;
-        border-bottom: $border-width solid $dropdown-border-color;
+        border-bottom: none;
         &:last-child {
             border-bottom: 0;
         }
     }
-    .dropdown-divider {
-        display: none;
-    }
+    
+    
+}
+.dropdown-menu:hover{
+	color: black;
+	font-weight: bold;
 }
 
 /**
@@ -188,4 +228,10 @@ $breadcrumb-divider-rtl: "/" !default;
     margin-top: 0;
 }
 
-
+/**
+*MOdificaciones
+*/
+.dropdown-toggle{
+background-color: #00547c;
+font-weight: bold;
+}

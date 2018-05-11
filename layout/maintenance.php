@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A maintenance layout for the boost theme.
+ * A maintenance layout for the escribiendo theme.
  *
  * @package   theme_escribiendo
  * @copyright 2016 Damyon Wiese

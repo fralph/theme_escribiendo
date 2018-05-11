@@ -70,7 +70,7 @@ function theme_escribiendo_get_extra_scss($theme) {
  */
 function theme_escribiendo_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo' || $filearea === 'backgroundimage')) {
-        $theme = theme_config::load('boost');
+        $theme = theme_config::load('escribiendo');
         // By default, theme files must be cache-able by both browsers and proxies.
         if (!array_key_exists('cacheability', $options)) {
             $options['cacheability'] = 'public';
@@ -96,14 +96,14 @@ function theme_escribiendo_get_main_scss_content($theme) {
 
     $context = context_system::instance();
     if ($filename == 'default.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/escribiendo/scss/preset/default.scss');
     } else if ($filename == 'plain.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/plain.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/escribiendo/scss/preset/plain.scss');
     } else if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_escribiendo', 'preset', 0, '/', $filename))) {
         $scss .= $presetfile->get_content();
     } else {
         // Safety fallback - maybe new installs etc.
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/escribiendo/scss/preset/default.scss');
     }
 
     return $scss;

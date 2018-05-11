@@ -17,7 +17,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * A login page layout for the boost theme.
+ * A login page layout for the escribiendo theme.
  *
  * @package   theme_escribiendo
  * @copyright 2016 Damyon Wiese

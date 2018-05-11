@@ -20,41 +20,56 @@
 <header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
 
     <div class="container-fluid navbar-nav">
-
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <div data-region="drawer-toggle">
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
         </div>
-
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                hidden-sm-down
-            {{/ output.should_display_navbar_logo }}
-                ">
+        <a href="{{{ config.wwwroot }}}" class="navbar-brand logo-escribiendo">
             {{# output.should_display_navbar_logo }}
                 <span class="logo hidden-xs-down">
-                    <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
+                    <img src="{{output.get_compact_logo_url}}" alt="">
                 </span>
             {{/ output.should_display_navbar_logo }}
-            <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
+            <span class="site-name hidden-sm-down"></span>
         </a>
-
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
-
-        <!-- navbar_plugin_output -->
-        {{{ output.navbar_plugin_output }}}
-
-        <!-- search_box -->
-        <span class="hidden-md-down">
-        {{{ output.search_box }}}
-        </span>
-
+</div>
+       
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<div class="container">
+	<div class="row">
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	<form class="form-inline">
+	<div class="form-group pull-right">
+    <input class="form-control float-right" type="text" placeholder="Buscar actividades" size="40">
+    <button class="btn btn-md btn-primary" type="submit">Buscar</button>
+ 	</div>
+ 	</div>
+ 	</div>  
+	</div>
+	<div class="row">
+<div class="dropdown pull-right">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Dropdown button
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+      <a class="dropdown-item" href="#">Link 3</a>
+      <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="#"> <button type="button" class="btn btn-danger">Cerrar sesión</button></a>
+      
+      
+    </div>
+  </div>
         <nav class="nav navbar-nav hidden-md-down">
             <!-- custom_menu -->
             {{{ output.custom_menu }}}
             <!-- page_heading_menu -->
             {{{ output.page_heading_menu }}}
         </nav>
+        </div>
+       </div>
     </div>
+   </div>
 </header>
 

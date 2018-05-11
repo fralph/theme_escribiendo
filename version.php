@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Boost.
+ * escribiendo.
  *
  * @package    theme_escribiendo
  * @copyright  2016 Frédéric Massart
@@ -24,6 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017111300;
+$plugin->version   = 2018050200;
 $plugin->requires  = 2017110800;
 $plugin->component = 'theme_escribiendo';
