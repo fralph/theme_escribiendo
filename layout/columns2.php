@@ -26,16 +26,21 @@ defined('MOODLE_INTERNAL') || die();
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
-
+$navdraweropen = false;
+$username= false;
+$isadmin=false;
 if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
-} else {
-    $navdraweropen = false;
-}
-$extraclasses = [];
+    $username = $USER->firstname;
+    if(has_capability('moodle/site:config', get_context_instance(CONTEXT_SYSTEM))){
+        $isadmin=true;
+    }
+    
+} $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -48,7 +53,15 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'logo_agencia' => $OUTPUT->image_url('footer/agencia_calidad', 'theme'),
+    'logo_ciae' => $OUTPUT->image_url('footer/ciae', 'theme'),
+    'logo_fundacion_arauco' => $OUTPUT->image_url('footer/fundacionarauco', 'theme'),
+    'logo_fondef' => $OUTPUT->image_url('footer/fondef', 'theme'),
+    'img_login' => $OUTPUT->image_url('header/ingreso', 'theme'),
+    'username'=>$username,
+    'isadmin'=>$isadmin
+
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;

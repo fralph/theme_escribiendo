@@ -29,7 +29,12 @@ $bodyattributes = $OUTPUT->body_attributes();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes
+    'bodyattributes' => $bodyattributes,
+    'logo_agencia' => $OUTPUT->image_url('footer/agencia_calidad', 'theme'),
+    'logo_ciae' => $OUTPUT->image_url('footer/ciae', 'theme'),
+    'logo_fundacion_arauco' => $OUTPUT->image_url('footer/fundacionarauco', 'theme'),
+    'logo_fondef' => $OUTPUT->image_url('footer/fondef', 'theme'),
+    'img_login' => $OUTPUT->image_url('header/ingreso', 'theme'),
 ];
 
 echo $OUTPUT->render_from_template('theme_escribiendo/login', $templatecontext);

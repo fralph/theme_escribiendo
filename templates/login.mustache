@@ -41,7 +41,7 @@
 <body {{{ bodyattributes }}}>
 
 <div id="page-wrapper">
-
+ {{>theme_escribiendo/header}}
     {{{ output.standard_top_of_body_html }}}
 
     <div id="page" class="container-fluid">
@@ -58,16 +58,46 @@
 </div>
 <footer id="page-footer" class="p-y-1 bg-inverse">
     <div class="container">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
+  
 
-        {{# output.page_doc_link }}
-            <p class="helplink">{{{ output.page_doc_link }}}</p>
-        {{/ output.page_doc_link }}
+  <div class="container">
+     <div class="navbar-text pull-left">
+		
+         <div id="container_footer">
+           <div class="col01_footer"></div>
+           
+           <div class="clear"></div>
+         </div>
+         
+         
 
-        {{{ output.login_info }}}
-        {{{ output.home_link }}}
+<div id="container_footer">
+           <div class="col02a_footer">
+           <img src="{{{logo_agencia}}}">
+
+           </div>
+           <div class="col03c_footer">
+           <img src="{{logo_ciae}}">
+           </div>
+           <div class="col03c_footer">
+           <img src="{{logo_fundacion_arauco}}">
+           </div>
+           <div class="col03c_footer">
+           <img src="{{logo_fondef}}">
+           </div>
+       </div>
+     </div>
+  </div>
+  
+<nav class="nav navbar-nav hidden-lg-up">
+            {{# output.custom_menu_flat }}
+                <ul class="list-unstyled p-t-1">
+                    {{> theme_escribiendo/custom_menu_footer }}
+                </ul>
+            {{/ output.custom_menu_flat }}
+        </nav>
         {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
+        {{{ output.standard_end_of_body_html }}}  
     </div>
 </footer>
 

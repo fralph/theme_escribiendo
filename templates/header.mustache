@@ -17,7 +17,7 @@
 {{!
     Page header.
 }}
-<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex" style="padding-left:250px;">
 
     <div class="container-fluid navbar-nav">
 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -38,36 +38,55 @@
 	<div class="container">
 	<div class="row">
 	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-	<form class="form-inline">
+	<form class="form-inline" method="get" action="{{{ config.wwwroot }}}/mod/emarking/activities/search.php">
 	<div class="form-group pull-right">
-    <input class="form-control float-right" type="text" placeholder="Buscar actividades" size="40">
-    <button class="btn btn-md btn-primary" type="submit">Buscar</button>
+    <input class="form-control float-right" type="text" name="search" placeholder="Buscar actividades" size="40">
+    <button id="searchbutton"class="btn btn-md btn-primary"  name="searchbutton">Buscar</button>
+    </form>
  	</div>
  	</div>
  	</div>  
 	</div>
 	<div class="row">
-<div class="dropdown pull-right">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-      Dropdown button
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Link 1</a>
-      <a class="dropdown-item" href="#">Link 2</a>
-      <a class="dropdown-item" href="#">Link 3</a>
-      <div class="dropdown-divider"></div>
-         <a class="dropdown-item" href="#"> <button type="button" class="btn btn-danger">Cerrar sesión</button></a>
-      
-      
-    </div>
-  </div>
+
+
+
+  
         <nav class="nav navbar-nav hidden-md-down">
             <!-- custom_menu -->
             {{{ output.custom_menu }}}
             <!-- page_heading_menu -->
             {{{ output.page_heading_menu }}}
-        </nav>
+            </nav>
+            
+            
+ <div class="menu_login">
+            {{#username}}
+<div class="dropdown" style="padding">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+     {{username}}
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}/mod/emarking/activities/my.php">Mis Cursos</a>
+      {{#isadmin}}
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}/mod/emarking/activities/assignmarker.php">Asignar Corrector</a>
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}/mod/emarking/activities/genres.php">Géneros</a>
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}">Moodle</a>
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}/mod/emarking/activities/testmarkingdata.php">Seguimiento de correctores</a>
+      {{/isadmin}}
+      <a class="dropdown-item" href="{{{ config.wwwroot }}}/mod/emarking/activities/createactivity.php">Crear Actividad</a>
+      <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="{{{ config.wwwroot }}}/login/logout.php"> <button type="button" class="btn btn-danger">Cerrar sesión</button></a>
+    </div>
+  </div>
+{{/username}}
+{{^username}}
+<a href="{{{ config.wwwroot }}}/login/index.php"><img src="{{img_login}}"></a>
+{{/username}}  
+
+
         </div>
+      
        </div>
     </div>
    </div>

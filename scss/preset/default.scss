@@ -17,7 +17,7 @@ $brand-info:                #ad53b2 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
-$brand-inverse:             $gray-dark !default;
+$brand-inverse:             #353535 !default;
 $navbar-height:             15px !default;
 
 // Spacing
@@ -108,8 +108,12 @@ $breadcrumb-divider-rtl: "/" !default;
 }
 
 body{
-	padding-top: 140px;
+	padding-top: 145px;
 }
+#nav-drawer{
+padding-top: 145px;
+}
+
 .navbar{
 	max-height: none;
 	margin-bottom: 0px;
@@ -164,7 +168,10 @@ header {
 	color: black;
 	font-weight: bold;
 }
-
+.menu_login{
+padding-left: 670px;
+padding-top: 25px;
+}
 /**
  * User picture.
  */
@@ -235,3 +242,82 @@ header {
 background-color: #00547c;
 font-weight: bold;
 }
+/* footer */
+#container_footer, #container2_footer, #container3_footer {
+	width: 100%;
+	background-color: #353535;
+	position: relative;
+}
+#container_footer {
+	height: 80px;
+	vertical-align: baseline;
+}
+#container2_footer {
+	height: 90px;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.col01_footer {
+	float: left;
+	width: 80%;
+	height: 80px;
+	background-image:url(../img/footer/tit_contacto.png);
+	background-repeat: no-repeat;
+}
+
+.col02_footer {
+	float: right;
+	width: 5%;
+	position: relative;
+}
+
+.col02a_footer {
+	float: right;
+	width: 15%;
+	position: relative;
+}
+
+.col03_footer {
+	float: left;
+	margin-left: 30px;
+	margin-top: 0px;
+	width: 40%;
+	color: #F90;
+	font-size: 1.0em;
+	position: relative;
+}
+
+.col03a_footer {
+	float: right;
+	padding-right: 10px;
+	text-align: right;
+	width: 50%;
+	color: #999;
+	font-size: 0.8em;
+}
+
+.col03b_footer {
+	float: left;
+	margin-left: 30px;
+	width: 27%;
+	color: #F90;
+	font-size: 1.0em;
+	position: absolute;
+	left: 4px;
+	bottom: 5px;
+}
+
+.col03c_footer {
+	float: left;
+	margin-left: 30px;
+	width: 25%;
+	color: #F90;
+	font-size: 1.0em;
+	position: relative;
+}
+
+hr { margin-top: 2px;}
