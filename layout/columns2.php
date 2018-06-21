@@ -32,7 +32,7 @@ $isadmin=false;
 if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
     $username = $USER->firstname;
-    if(has_capability('moodle/site:config', get_context_instance(CONTEXT_SYSTEM))){
+    if(has_capability('moodle/site:config', context_system::instance())){
         $isadmin=true;
     }
     
